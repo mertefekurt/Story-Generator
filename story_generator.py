@@ -16,7 +16,7 @@ import asyncio
 import logging
 import traceback
 import importlib.util
-from typing import Dict, List, Optional, Any, Tuple
+from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
 from pathlib import Path
 import configparser
@@ -48,7 +48,7 @@ try:
         print("WeasyPrint bulundu. PDF oluşturma etkinleştirildi.")
     else:
         print("WeasyPrint bulunamadı. PDF oluşturma için Pandoc kullanılacak.")
-except:
+except Exception:
     print("WeasyPrint kontrol edilirken hata oluştu. PDF oluşturma için Pandoc kullanılacak.")
 
 # .env dosyasını yükle
@@ -207,7 +207,7 @@ class VectorDatabase:
         if self.character_index.ntotal == 0:
             return []
             
-        distances, indices = self.character_index.search(np.array([vector]), k)
+        _, indices = self.character_index.search(np.array([vector]), k)
         return [list(self.characters.values())[i] for i in indices[0] if i < len(self.characters)]
         
     def search_similar_locations(self, vector: np.ndarray, k: int = 5) -> List[Location]:
@@ -215,7 +215,7 @@ class VectorDatabase:
         if self.location_index.ntotal == 0:
             return []
             
-        distances, indices = self.location_index.search(np.array([vector]), k)
+        _, indices = self.location_index.search(np.array([vector]), k)
         return [list(self.locations.values())[i] for i in indices[0] if i < len(self.locations)]
         
     def search_similar_events(self, vector: np.ndarray, k: int = 5) -> List[Event]:
@@ -223,7 +223,7 @@ class VectorDatabase:
         if self.event_index.ntotal == 0:
             return []
             
-        distances, indices = self.event_index.search(np.array([vector]), k)
+        _, indices = self.event_index.search(np.array([vector]), k)
         return [list(self.events.values())[i] for i in indices[0] if i < len(self.events)]
     
     def save_to_file(self, filename: str = "vector_db_backup.json"):
