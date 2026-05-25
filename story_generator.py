@@ -226,7 +226,7 @@ class VectorDatabase:
         _, indices = self.event_index.search(np.array([vector]), k)
         return [list(self.events.values())[i] for i in indices[0] if i < len(self.events)]
     
-    def save_to_file(self, filename: str = "vector_db_backup.json"):
+    def save_to_file(self, filename: str = "vector_db_backup.json") -> None:
         """Veritabanı durumunu diske kaydeder."""
         try:
             character_data = [{
