@@ -1,10 +1,25 @@
 <svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Story Generator cover">
-  <rect width="1280" height="420" rx="28" fill="#2a1114"/>
 
-  <rect x="86" y="82" width="360" height="256" rx="34" fill="#e11d48" opacity=".18"/>
-  <path d="M162 154h208M162 214h128M162 274h176" stroke="#fff1f2" stroke-width="15" stroke-linecap="round"/>
-  <text x="502" y="185" fill="#fff1f2" font-family="Aptos, Segoe UI, ui-sans-serif, system-ui" font-size="62" font-weight="800">Story Generator</text>
-  <text x="506" y="246" fill="#fecdd3" font-family="Aptos, Segoe UI, ui-sans-serif, system-ui" font-size="24">Focused CLI for developer tooling</text>
-  <rect x="506" y="282" width="360" height="44" rx="22" fill="#f97316" opacity=".18"/>
-  <text x="528" y="311" fill="#fff1f2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">DESKTOP AND LEARNING</text>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eab308" stop-opacity=".34"/>
+      <stop offset=".54" stop-color="#1b2012" stop-opacity="0"/>
+      <stop offset="1" stop-color="#65a30d" stop-opacity=".30"/>
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="31" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="420" rx="30" fill="#1b2012"/>
+  <rect width="1280" height="420" rx="30" fill="url(#g)" filter="url(#grain)"/>
+
+  <path d="M92 318h1096" stroke="#eab308" stroke-width="10" stroke-linecap="round"/>
+  <path d="M780 70h348l74 74v194H780z" fill="none" stroke="#65a30d" stroke-width="10" stroke-linejoin="round" opacity=".9"/>
+  <path d="M826 142h230M826 198h160M826 254h246" stroke="#d9f99d" stroke-width="10" stroke-linecap="round"/>
+  <text x="92" y="174" fill="#fefce8" font-family="Space Grotesk, ui-sans-serif, system-ui" font-size="60" font-weight="850">Story Generator</text>
+  <text x="96" y="234" fill="#d9f99d" font-family="Space Grotesk, ui-sans-serif, system-ui" font-size="23">Long-form story drafting from a configurable outline</text>
+  <text x="96" y="286" fill="#eab308" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800">DESKTOP LAB</text>
 </svg>
